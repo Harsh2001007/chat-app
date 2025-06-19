@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 import authRoutes from "./routes/auth.route.js";
-import messageRoute from "./routes/auth.route.js";
+import messageRoute from "./routes/message.route.js";
 
 import { connectDB } from "./lib/db.js";
 
@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 
 app.use("/api/auth", authRoutes);
-app.use("/api/message", messageRoute);
+app.use("/api/messages", messageRoute);
 
 app.listen(PORT, () => {
   console.log("server started on Port: " + PORT);
